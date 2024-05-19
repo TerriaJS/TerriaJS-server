@@ -4,11 +4,21 @@ var express = require('express');
 var proxy = require('../lib/controllers/proxy');
 var request = require('supertest');
 const { URL } = require('url');
+const {HttpProxyAgent} = require("hpagent");
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
 
 describe('proxy', function() {
     var fakeRequest;
+
+    const expectedProxy = new HttpProxyAgent({
+        keepAlive: true,
+        keepAliveMsecs: 1000,
+        maxSockets: 256,
+        maxFreeSockets: 256,
+        scheduling: 'lifo',
+        proxy: 'http://proxy/'
+    }).proxy;
 
     var openProxyOptions = {
         proxyAllDomains: true
@@ -242,7 +252,7 @@ describe('proxy', function() {
                     [methodName]('/https://example.com/blah')
                     .expect(200)
                     .expect(function() {
-                        expect(fakeRequest.calls.argsFor(0)[0].proxy).toBe('http://proxy/');
+                        expect(fakeRequest.calls.argsFor(0)[0].agent.http.proxy).toEqual(expectedProxy);
                         expect(fakeRequest.calls.argsFor(0)[0].method).toBe(verb);
                     })
                     .end(assert(done));
@@ -253,7 +263,7 @@ describe('proxy', function() {
                     [methodName]('/https://example.com/blah')
                     .expect(200)
                     .expect(function() {
-                        expect(fakeRequest.calls.argsFor(0)[0].proxy).toBeUndefined();
+                        expect(fakeRequest.calls.argsFor(0)[0].agent.http.proxy).toBeUndefined();
                         expect(fakeRequest.calls.argsFor(0)[0].method).toBe(verb);
                     })
                     .end(assert(done));
@@ -267,7 +277,7 @@ describe('proxy', function() {
                 }))[methodName]('/https://example.com/blah')
                     .expect(200)
                     .expect(function() {
-                        expect(fakeRequest.calls.argsFor(0)[0].proxy).toBeUndefined();
+                        expect(fakeRequest.calls.argsFor(0)[0].agent.http.proxy).toBeUndefined();
                         expect(fakeRequest.calls.argsFor(0)[0].method).toBe(verb);
                     })
                     .end(assert(done));
@@ -281,7 +291,7 @@ describe('proxy', function() {
                 }))[methodName]('/https://example.com/blah')
                     .expect(200)
                     .expect(function() {
-                        expect(fakeRequest.calls.argsFor(0)[0].proxy).toBe('http://proxy/');
+                        expect(fakeRequest.calls.argsFor(0)[0].agent.http.proxy).toEqual(expectedProxy);
                         expect(fakeRequest.calls.argsFor(0)[0].method).toBe(verb);
                     })
                     .end(assert(done));
@@ -606,7 +616,7 @@ describe('proxy', function() {
                 return request;
             },
 
-            abort: () => {/* called by proxy.js on connection close */}
+            cancel: () => {/* called by proxy.js on connection close */}
         };
 
         return request;

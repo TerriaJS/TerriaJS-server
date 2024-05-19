@@ -4,7 +4,7 @@
   "description": "NodeJS server for TerriaJS, consisting of a CORS proxy, proj4 CRS lookup service, and express static server.",
   "engineStrict": true,
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=20.0.0"
   },
   "resolutions": {
     "underscore": "^1.12.1"
@@ -40,13 +40,13 @@
     "cors": "^2.7.1",
     "express": "^4.8.0",
     "express-brute": "^1.0.1",
+    "got": "14.4.6",
+    "hpagent": "^1.2.0",
     "json5": "^2.2.3",
     "morgan": "^1.7.0",
     "proj4": "^2.3.12",
     "proj4js-defs": "0.0.1",
     "range_check": "^1.4.0",
-    "request": "^2.88.2",
-    "request-promise": "^4.0.1",
     "yargs": "^13.2.4"
   },
   "devDependencies": {
