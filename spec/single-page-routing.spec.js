@@ -127,7 +127,7 @@ describe('single-page-routing', function() {
             });
       });
       it('should resolve an actual html file', function() {
-        request(buildApp(routingOffOptions))
+        request(buildApp(routingOnOptions))
             .get('/actual-html-file.html')
             .expect(200)
             .expect('Content-Type', /html/)
@@ -136,7 +136,7 @@ describe('single-page-routing', function() {
             });
       });
       it('should resolve an actual json file', function() {
-        request(buildApp(routingOffOptions))
+        request(buildApp(routingOnOptions))
             .get('/actual-json.json')
             .expect(200)
             .expect('Content-Type', /json/)
