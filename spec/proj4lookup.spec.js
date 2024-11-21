@@ -1,5 +1,3 @@
-var express = require('express');
-var proj4lookup = require('../lib/controllers/proj4lookup');
 var request = require('supertest');
 var makeserver = require('../lib/makeserver');
 
