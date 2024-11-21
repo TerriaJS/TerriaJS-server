@@ -47,7 +47,7 @@
     "range_check": "^1.4.0",
     "request": "^2.88.2",
     "request-promise": "^4.0.1",
-    "yargs": "^13.2.4"
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "jasmine": "^3.4.0",
