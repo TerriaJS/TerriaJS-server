@@ -141,6 +141,9 @@
             // Required: an existing S3 bucket in which to store objects
             "bucket": "terria-sharedata"
 
+            // Optional: pass through custom S3 endpoint which will utilise the above region.
+            "endpoint": "https://{region}.your.custom.s3.endpoint.com
+
             // Optional: The access key ID and secret access key of a user with S3 getObject and putObject permission on the above bucket
             // If not provided here, you must ensure they're available as environment variables or in a shared credentials file.
             // See http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-configuring.html
