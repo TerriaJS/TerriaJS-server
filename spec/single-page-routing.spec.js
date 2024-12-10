@@ -1,9 +1,10 @@
 "use strict";
 
-var fs = require('fs');
-var makeServer = require('../lib/makeserver');
-var singlePageRouting = require('../lib/controllers/single-page-routing');
-var request = require('supertest');
+import fs from 'fs';
+import makeServer from '../lib/makeserver.js';
+import singlePageRouting from '../lib/controllers/single-page-routing.js';
+import { default as opts } from '../lib/options.js';
+import request from 'supertest';
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
 
@@ -162,7 +163,7 @@ describe('single-page-routing', function() {
     });
 
     function buildApp(spaOptions) {
-        var options = require('../lib/options').init(true);
+        var options = opts.init(true);
         const serverOptions = {
           ...appOptions,
           settings: {
