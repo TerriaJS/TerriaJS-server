@@ -22,7 +22,8 @@ describe('proj4lookup', function() {
         it('should 404 unknown projection', function(done) {
             request(server)
                 .get('/api/v1/proj4def/EPSG:Notarealthing')
-                .expect(404, done);
+                .expect(404)
+                .end(assert(done));
         });
     });
 

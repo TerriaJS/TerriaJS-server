@@ -735,18 +735,18 @@ isstream@~0.1.2:
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   integrity sha512-Yljz7ffyPbrLpLngrMtZ7NduUgVvi6wG9RJ9IUcyCd59YQ911PBJphODUcbOVbqYfxe1wuYf/LJ8PauMRwsM/g==
 
-jasmine-core@~3.99.0:
-  version "3.99.1"
-  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-3.99.1.tgz#5bfa4b2d76618868bfac4c8ff08bb26fffa4120d"
-  integrity sha512-Hu1dmuoGcZ7AfyynN3LsfruwMbxMALMka+YtZeGoLuDEySVmVAPaonkNoBRIw/ectu8b9tVQCJNgp4a4knp+tg==
+jasmine-core@^4.6.0:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-4.6.1.tgz#5ebb8afa07282078f8d7b15871737a83b74e58f2"
+  integrity sha512-VYz/BjjmC3klLJlLwA4Kw8ytk0zDSmbbDLNs794VnWmkcCB7I9aAL/D48VNQtmITyPvea2C3jdUMfc3kAoy0PQ==
 
-jasmine@^3.4.0:
-  version "3.99.0"
-  resolved "https://registry.yarnpkg.com/jasmine/-/jasmine-3.99.0.tgz#7cc7aeda7ade2d57694fc818a374f778cbb4ea62"
-  integrity sha512-YIThBuHzaIIcjxeuLmPD40SjxkEcc8i//sGMDKCgkRMVgIwRJf5qyExtlJpQeh7pkeoBSOe6lQEdg+/9uKg9mw==
+jasmine@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/jasmine/-/jasmine-4.6.0.tgz#2ecde288da25815c67897bb9b9b91f6709880ce1"
+  integrity sha512-iq7HQ5M8ydNUspjd9vbFW9Lu+6lQ1QLDIqjl0WysEllF5EJZy8XaUyNlhCJVwOx2YFzqTtARWbS56F/f0PzRFw==
   dependencies:
     glob "^7.1.6"
-    jasmine-core "~3.99.0"
+    jasmine-core "^4.6.0"
 
 jmespath@0.16.0:
   version "0.16.0"
