@@ -6,9 +6,6 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "resolutions": {
-    "underscore": "^1.12.1"
-  },
   "main": "lib/app.js",
   "scripts": {
     "test": "jasmine",
@@ -39,12 +36,12 @@
     "compression": "^1.6.0",
     "cors": "^2.7.1",
     "express": "^4.8.0",
-    "express-brute": "^1.0.1",
     "json5": "^2.2.3",
     "morgan": "^1.7.0",
     "proj4": "^2.3.12",
     "proj4js-defs": "0.0.1",
     "range_check": "^1.4.0",
+    "rate-limiter-flexible": "^5.0.3",
     "request": "^2.88.2",
     "request-promise": "^4.0.1",
     "yargs": "^13.2.4"
