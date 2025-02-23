@@ -1,9 +1,9 @@
 "use strict";
 
-var express = require('express');
-var proxy = require('../lib/controllers/proxy');
-var request = require('supertest');
-const { URL } = require('url');
+import express from 'express';
+import proxy from '../lib/controllers/proxy.js';
+import request from 'supertest';
+import { URL } from 'url';
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
 
