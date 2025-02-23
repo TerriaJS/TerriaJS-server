@@ -1,5 +1,7 @@
 ### Next version
 
+* Require Node 20.
+
 ### 4.0.1
 
 * Fixed proxied upstream POST request being aborted when the stream associated with the downstream request is closed on Node v16+. This will now again correctly be triggered only when the socket is closed early.
